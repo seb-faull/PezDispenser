@@ -5,7 +5,9 @@ public class Main {
         System.out.println("We are making a new Pez Dispenser");
         System.out.printf("FUN FACT: There are %d PEZ allowed in every dispenser %n",
                             PezDispenser.MAX_PEZ);
+
         PezDispenser dispenser = new PezDispenser("Yoda");
+
         System.out.printf("The dispenser is %s %n",
                             dispenser.getCharacterName()
                         );
@@ -13,10 +15,21 @@ public class Main {
         if (dispenser.isEmpty()) {
             System.out.println("Dispenser is empty");
         }
+
         System.out.println("Filling the dispenser with delicious PEZ...");
         dispenser.fill();
+
         if (!dispenser.isEmpty()) {
             System.out.println("Dispenser is full");
+        }
+
+        int i = 1;
+        while (dispenser.dispense()) {
+            System.out.printf("%s - Chomp!%n", i++);
+        }
+
+        if (dispenser.isEmpty()) {
+            System.out.println("Ate all the PEZ");
         }
 
 
